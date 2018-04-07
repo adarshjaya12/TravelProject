@@ -1,0 +1,44 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <TypeScriptToolsVersion>2.5</TypeScriptToolsVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Remove="wwwroot\css\main.css" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="ClientApp\Reducer\reducer-actions.ts" />
+    <None Remove="ClientApp\Reducer\reducer.ts" />
+    <None Remove="Typescript\global.ts" />
+    <None Remove="Typescript\Home\home.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\APIClient\APIClient.csproj" />
+    <ProjectReference Include="..\SharedCode\SharedCode.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\css\" />
+    <Folder Include="wwwroot\dist\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\Reducer\reducer.ts" />
+    <TypeScriptCompile Include="ClientApp\Reducer\reducer-actions.ts" />
+    <TypeScriptCompile Include="Typescript\global.ts" />
+    <TypeScriptCompile Include="Typescript\Home\home.ts" />
+  </ItemGroup>
+
+</Project>
